@@ -13,10 +13,13 @@
 
 ActiveRecord::Schema.define(version: 20141212232718) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "products", force: true do |t|
-    t.string   "title",                               default: ""
-    t.decimal  "price",      precision: 10, scale: 0, default: 0
-    t.boolean  "published",                           default: false
+    t.string   "title",      default: ""
+    t.decimal  "price",      default: 0.0
+    t.boolean  "published",  default: false
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
